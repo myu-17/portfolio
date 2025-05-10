@@ -3,55 +3,57 @@
 ==================== */
 const observeSVG = () => {
   const paths = document.querySelectorAll(".line");
-  console.log(paths)
   for (const path of paths) {
     const length = path.getTotalLength();
     path.style.setProperty("--path-length", length);
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          path.style.animation = "wave-line 2s linear 1 forwards"
-          observer.unobserve(path)
-        }
-      })
-    }, { threshold: 0.8 })
-    observer.observe(path)
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            path.style.animation = "wave-line 2s linear 1 forwards";
+            observer.unobserve(path);
+          }
+        });
+      },
+      { threshold: 0.8 }
+    );
+    observer.observe(path);
   }
-}
+};
 
 window.onload = function () {
-  var nav = document.getElementById('nav-wrapper');
-  var hamburger = document.getElementById('js-hamburger');
-  var blackBg = document.getElementById('js-black-bg');
-  var topWorks = document.querySelector('.top-works');
-  var navLinks = document.querySelectorAll('.sp-nav a');
+  var nav = document.getElementById("nav-wrapper");
+  var hamburger = document.getElementById("js-hamburger");
+  var blackBg = document.getElementById("js-black-bg");
+  var topWorks = document.querySelector(".top-works");
+  var navLinks = document.querySelectorAll(".sp-nav a");
 
   // ハンバーガークリック
-  hamburger.addEventListener('click', function () {
-    nav.classList.toggle('open');
+  hamburger.addEventListener("click", function () {
+    nav.classList.toggle("open");
   });
 
   // 黒背景クリック
-  blackBg.addEventListener('click', function () {
-    nav.classList.remove('open');
+  blackBg.addEventListener("click", function () {
+    nav.classList.remove("open");
   });
 
   // スクロールでナビ表示
-  window.addEventListener('scroll', function () {
+  window.addEventListener("scroll", function () {
     var topWorksTop = topWorks.getBoundingClientRect().top;
     var windowHeight = window.innerHeight;
 
     if (topWorksTop < windowHeight) {
-      nav.classList.add('is-show');
+      nav.classList.add("is-show");
     } else {
-      nav.classList.remove('is-show');
+      nav.classList.remove("is-show");
     }
   });
 
   // ナビ内リンククリック
   navLinks.forEach(function (link) {
-    link.addEventListener('click', function (e) {
-      var href = link.getAttribute('href');
+    link.addEventListener("click", function (e) {
+      var href = link.getAttribute("href");
 
       if (href.startsWith("#") && href.length > 1) {
         // ページ内リンク
@@ -63,25 +65,22 @@ window.onload = function () {
 
           window.scrollTo({
             top: rect,
-            behavior: 'smooth'
+            behavior: "smooth",
           });
 
           setTimeout(function () {
-            nav.classList.remove('open');
+            nav.classList.remove("open");
           }, 800); // スクロール時間に合わせる
         }
       } else {
         // 通常リンク
-        nav.classList.remove('open');
+        nav.classList.remove("open");
       }
     });
   });
 
-  observeSVG()
+  observeSVG();
 };
-
-
-
 
 // scroll down
 document.addEventListener("DOMContentLoaded", () => {
@@ -100,7 +99,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 // トグルボタンでメニュー開閉
-$('.toggle_btn').on('click', function () {
+$(".toggle_btn").on("click", function () {
   if ($nav.hasClass(open)) {
     $wrapper.fadeOut(500, function () {
       $nav.removeClass(open);
@@ -111,8 +110,7 @@ $('.toggle_btn').on('click', function () {
     });
   } else {
     $nav.addClass(open);
-    $wrapper.fadeIn(500, function () {
-    });
+    $wrapper.fadeIn(500, function () {});
   }
 });
 
@@ -122,11 +120,9 @@ $('.toggle_btn').on('click', function () {
 //     $nav.removeClass(open);
 //     swiper1.destroy(true, true);
 //     swiper2.destroy(true, true);
-//     initSwiper(); 
+//     initSwiper();
 //   });
 // });
-
-
 
 /* ====================
    h2文字アニメーション
@@ -134,7 +130,7 @@ $('.toggle_btn').on('click', function () {
 document.addEventListener("DOMContentLoaded", () => {
   const targets = document.querySelectorAll(".anime-up");
 
-  targets.forEach(target => {
+  targets.forEach((target) => {
     const text = target.textContent.trim();
     target.textContent = "";
 
@@ -150,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const observer = new IntersectionObserver((entries, obs) => {
-    entries.forEach(entry => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("displayed");
         obs.unobserve(entry.target);
@@ -158,12 +154,11 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  targets.forEach(target => observer.observe(target));
+  targets.forEach((target) => observer.observe(target));
 });
 
-
-window.addEventListener('DOMContentLoaded', function () {
-  var images = document.querySelectorAll('.pararaxImg');
+window.addEventListener("DOMContentLoaded", function () {
+  var images = document.querySelectorAll(".pararaxImg");
   new simpleParallax(images);
 });
 
@@ -182,13 +177,11 @@ $(window).scroll(function () {
   });
 });
 
-
-
 /* ====================
   works切り替え
 ==================== */
 document.addEventListener("DOMContentLoaded", () => {
-  const topWorks = document.getElementById("works")
+  const topWorks = document.getElementById("works");
   const selectedSection = document.getElementById("top-works-selected");
   const allSection = document.querySelector(".top-works-all");
 
@@ -216,28 +209,26 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function fade() {
-    topWorks.style.transition = "none"
-    topWorks.style.opacity = 0
+    topWorks.style.transition = "none";
+    topWorks.style.opacity = 0;
     setTimeout(() => {
-      topWorks.style.transition = "opacity 0.8s"
-      topWorks.style.opacity = 1
-    }, 100)
+      topWorks.style.transition = "opacity 0.8s";
+      topWorks.style.opacity = 1;
+    }, 100);
   }
 
   viewAllBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    fade()
+    fade();
     showAll(true);
   });
 
   viewSelectedBtn.addEventListener("click", (e) => {
     e.preventDefault();
-    fade()
+    fade();
     showSelected(true);
   });
 });
-
-
 
 /* ====================
 parallax
@@ -255,9 +246,3 @@ document.addEventListener("DOMContentLoaded", function () {
     const parallax_instance = new simpleParallax(target, parallaxConfig);
   }
 });
-
-
-
-
-
-
