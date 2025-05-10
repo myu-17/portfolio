@@ -1,0 +1,800 @@
+@charset "utf-8";
+
+/* ====================
+   共通設定
+==================== */
+html {
+    scroll-behavior: smooth;
+}
+
+/* タグ */
+
+body {
+    background: #fafafa;
+    color: #333333;
+}
+
+h1,
+h2 {
+    font-family: "Aboreto", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #007b74;
+}
+
+/* 見出し(h２) */
+h2 {
+    margin-left: 10%;
+}
+
+h3 {
+    font-family: "optima-nova-lt-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+p {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(11px, calc(0.596vw + 6.416px), 15px);
+    color: #333333;
+    line-height: 2;
+    letter-spacing: 0.02em;
+}
+
+a {
+    font-family: "optima-nova-lt-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #007b74;
+}
+
+.tytle ruby {
+    ruby-align: center;
+    ruby-position: over;
+}
+
+.tytle rt {
+    font-size: 10px;
+    letter-spacing: 0.5em;
+    margin-bottom: 2px;
+}
+
+
+
+
+img {
+    width: 100%;
+}
+
+p,
+h2,
+h3 {
+    font-feature-settings: "palt";
+}
+
+
+/* クラス */
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex02 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* h2 */
+.section-heading {
+    justify-content: flex-start;
+    /* position: relative; */
+}
+
+.section-heading .flex02 {
+    align-items: flex-end;
+}
+
+.secTitleEn {
+    font-size: clamp(47px, calc(1.937vw + 32.101px), 60px);
+}
+
+.secTitleJp {
+    font-size: clamp(14px, calc(0.596vw + 9.416px), 18px);
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/* scroll down */
+.scroll-down-01 {
+    position: absolute;
+    left: 10%;
+    bottom: 20%;
+    width: 144px;
+    aspect-ratio: 1;
+}
+
+.circle-text-01 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 20s linear infinite;
+    color: #007b74;
+}
+
+.circle-text-01 span {
+    position: absolute;
+    left: 50%;
+    font-family: optima-nova-lt-pro, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(10px, calc(1.272vw + 5.229px), 15px);
+    transform-origin: 0 72px;
+}
+
+.arrow-01 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 30px;
+    height: 33%;
+    transform: translate(-50%, -50%);
+    animation: scroll_01 3s infinite;
+}
+
+.arrow-01::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 100%;
+    width: 1px;
+    background-color: #007b74;
+    transform: translateX(-50%);
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes scroll_01 {
+    0% {
+        transform: translate(-50%, -50%) translateY(-10px);
+        opacity: 0;
+    }
+
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translate(-50%, -50%) translateY(10px);
+        opacity: 0;
+    }
+}
+
+.all-btn a {
+    background: #B6ECDD;
+    background: linear-gradient(330deg, rgba(182, 236, 221, 1) 0%, rgba(137, 200, 208, 1) 100%);
+    font-family: "optima-nova-lt-pro", sans-serif;
+    font-size: clamp(16px, calc(1.341vw + 5.686px), 25px);
+    font-weight: 300;
+    font-style: normal;
+    letter-spacing: 0.03em;
+    border-radius: 999px;
+    display: flex;
+    box-sizing: border-box;
+    width: 13vw;
+    aspect-ratio: 1;
+    /* height: 13%; */
+    justify-content: center;
+    align-items: center;
+    margin-inline: auto;
+    cursor: pointer;
+    box-shadow: 1px 1px 5px 0px rgba(112, 156, 161, 0.35);
+    transition: all 0.3s;
+}
+
+
+
+/* .button-10 a:hover {
+    color: #fff;
+    background: #333;
+    transition: all 0.3s;
+} */
+
+
+
+/* ====================
+   header
+==================== */
+/* 
+hamburger(ハンバーガーアイコン)
+=================================== */
+.hamburger {
+    position: fixed;
+    right: 20px;
+    top: 20px;
+    width: 50px;
+    height: 40px;
+    cursor: pointer;
+    z-index: 300;
+}
+
+.hamburger__line {
+    position: absolute;
+    /* width: 35px; */
+    height: 1px;
+    right: 0;
+    background-color: #007b74;
+    transition: all 0.5s;
+}
+
+.hamburger__line--1 {
+    top: 1px;
+    width: 40px;
+}
+
+.hamburger__line--2 {
+    top: 13px;
+    width: 34px;
+}
+
+.hamburger__line--3 {
+    top: 26px;
+    width: 28px;
+}
+
+/*ハンバーガーがクリックされたら*/
+.open .hamburger__line--1 {
+    transform: rotate(330deg);
+    top: 11px;
+}
+
+.open .hamburger__line--2 {
+    opacity: 0;
+}
+
+.open .hamburger__line--3 {
+    transform: rotate(30deg);
+    top: 11px;
+    width: 40px;
+}
+
+/* 
+  sp-nav(ナビ)
+  =================================== */
+.sp-nav {
+    position: fixed;
+    right: -100%;
+    /*ハンバーガーがクリックされる前はWindow右側に隠す*/
+    top: 0;
+    width: 280px;
+    /* 出てくるスライドメニューの幅 */
+    height: 550px;
+    border-radius: 0 0 0 20px;
+    background: #C2F3E3;
+    background: linear-gradient(320deg, rgba(194, 243, 227, 1) 0%, rgba(141, 201, 212, 1) 100%);
+    transition: all 0.5s;
+    z-index: 200;
+    overflow-y: auto;
+    /* メニューが多くなったらスクロールできるように */
+    transition: right 0.5s ease, opacity 0.5s ease;
+
+}
+
+.sp-nav ul {
+    align-items: flex-end;
+    gap: 28px;
+    padding-left: 40%;
+}
+
+.sp-nav ul li {
+    align-items: flex-end;
+}
+
+
+.sp-nav ul li a {
+    font-size: 20px;
+    font-family: "Aboreto", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    color: #007b74;
+    letter-spacing: 0.1em;
+
+}
+
+.sp-nav ul li span {
+    font-size: 11px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #007b74;
+    letter-spacing: 0.05em;
+}
+
+/*ハンバーガーがクリックされたら右からスライド*/
+.open .sp-nav {
+    right: 0;
+}
+
+
+/* 
+  black-bg(ハンバーガーメニュー解除用bg)
+  =================================== */
+.black-bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 5;
+    background-color: #000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+}
+
+/*ハンバーガーメニューが開いたら表示*/
+.open .black-bg {
+    opacity: 0.3;
+    visibility: visible;
+}
+
+/* opacity */
+.nav-wrapper {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    /* ふわっと出る */
+    pointer-events: none;
+    /* 最初はクリックもできないように */
+}
+
+.nav-wrapper.is-show {
+    opacity: 1;
+    pointer-events: auto;
+    /* 表示されたらクリックできるように */
+}
+
+
+/* ====================
+   footer
+==================== */
+footer {
+    position: relative;
+    /* padding-top: 3%; */
+    background-image: linear-gradient(330deg, rgb(183, 248, 219, 0.8) 0%, rgb(80, 167, 194, 0.8) 100%);
+    color: #007b74;
+    overflow: hidden;
+    background: url(../image/footer_bg.svg)center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1440/600;
+}
+
+footer .mail-address {
+    position: absolute;
+    bottom: 43%;
+    right: 2%;
+    font-size: clamp(18px, calc(2.683vw - 2.629px), 36px);
+    font-family: "optima-nova-lt-pro", sans-serif;
+    font-weight: 100;
+    font-style: normal;
+    letter-spacing: 0.12em;
+}
+
+footer .footer-arrow {
+    margin: 2% 0 0 1%;
+    width: clamp(10px, calc(1.192vw + 0.832px), 18px);
+}
+
+footer .copyright {
+    position: absolute;
+    left: 25px;
+    bottom: 0;
+    transform: rotate(-90deg);
+    transform-origin: left bottom;
+    font-size: clamp(10px, calc(0.373vw + 7.135px), 12.5px);
+    font-family: "optima-nova-lt-pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    color: #007b74;
+    white-space: nowrap;
+    /* 改行防止で崩れを防ぐ */
+}
+
+footer .contact-tytle {
+    display: inline-block;
+    position: absolute;
+    bottom: -13%;
+    right: -1%;
+    font-size: clamp(110px, calc(16.393vw - 16.066px), 220px);
+    font-family: "Aboreto", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+/* ====================
+  animation
+==================== */
+/*text animetions(h2)*/
+@keyframes showTextFromBottom {
+    0% {
+        transform: translateY(100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.anime-up>span {
+    overflow: hidden;
+    display: inline-block;
+}
+
+.anime-up>span>span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(100%);
+}
+
+.anime-up.displayed>span>span {
+    animation: showTextFromBottom 0.35s ease-out both;
+}
+
+/* wave animation */
+.wave-line {
+    width: 100vw;
+    height: auto;
+}
+
+.wave-line .line {
+    stroke-dasharray: var(--path-length);
+    stroke-dashoffset: var(--path-length);
+}
+
+@keyframes wave-line {
+    0% {
+        stroke-dashoffset: var(--path-length);
+    }
+
+    100% {
+        stroke-dashoffset: 0;
+    }
+}
+
+
+/* img animation */
+.anime-wrap {
+    position: relative;
+    overflow: hidden;
+    border-radius: 2.5%;
+}
+
+.works-04 a,
+.top-works-all ul li a .banner {
+    border-radius: 0;
+}
+
+.anime-wrap img {
+    opacity: 0;
+    transform: scale(1.2);
+    transition: .9s;
+}
+
+.anime-wrap.show img {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* hover effect */
+.hover-animation img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-duration: 0.5s;
+}
+
+.hover-animation img:hover {
+    transform: scale(1.1, 1.1);
+}
+
+/* fadein-up */
+.fadein-up img {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: .5s;
+}
+
+.fadein-up.show img {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* hover effect(ズーム＆透明) */
+.list-thumb {
+    position: relative;
+    overflow: hidden;
+}
+
+.list-thumb img {
+    position: static;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition-duration: 0.5s;
+}
+
+.list-thumb img:hover {
+    transform: scale(1.13, 1.13);
+    opacity: 0.8;
+}
+
+
+
+/* ====================
+   responsive
+==================== */
+@media screen and (max-width: 768px) {
+
+    /* header */
+    /* hmg */
+    .sp-nav {
+        width: 100%;
+        height: 100vh;
+        border-radius: 0;
+    }
+
+    .sp-nav ul {
+        gap: clamp(10px, calc(4.58vw - 7.176px), 28px);
+    }
+
+    .sp-nav ul li a {
+        font-size: clamp(25px, calc(3.817vw + 10.687px), 40px);
+    }
+
+    .sp-nav ul li span {
+        font-size: clamp(10px, calc(1.272vw + 5.229px), 15px);
+    }
+
+    .sp-nav ul li {
+        gap: 5px;
+    }
+
+    .open .hamburger__line--1,
+    .open .hamburger__line--3 {
+        width: clamp(40px, calc(6.361vw + 16.145px), 65px);
+    }
+
+
+
+
+    /* footer */
+    /* footer {
+        height: clamp(160px, calc(30.534vw + 45.496px), 280px);
+    } */
+
+    footer .contact-tytle {
+        font-size: clamp(65px, calc(11.45vw + 22.061px), 110px);
+    }
+
+    footer .mail-address {
+        font-size: clamp(15px, calc(0.763vw + 12.137px), 18px);
+    }
+
+    footer .copyright {
+        left: clamp(13px, calc(3.053vw + 1.55px), 25px);
+        font-size: clamp(5px, calc(1.272vw + 0.229px), 10px);
+    }
+
+
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* !!下記からアニメーションの記述！！ */
+
+/* topに戻るボタン */
+/* .to_top {
+    justify-content: right;
+}
+
+.to_top_item {
+    display: inline-block;
+    transition: 1.5s ease-in-out;
+    position: fixed;
+    right: 20px;
+    bottom: 30px;
+    z-index: var(--z-index-level-4);
+    width: 2%;
+}
+
+
+.is-animation {
+    height: 70px;
+}
+
+.fadeIn_up {
+    opacity: 0;
+    transform: translate(0, 10%);
+    transition: 2s;
+}
+
+.fadeIn_up.is-show {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.fadeIn_left {
+    opacity: 0;
+    transform: translate(-50%, 0);
+    transition: 2s;
+}
+
+.fadeIn_left.is-show {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+.fadeIn_right {
+    opacity: 0;
+    transform: translate(50%, 0);
+    transition: 2s;
+}
+
+.fadeIn_right.is-show {
+    transform: translate(0, 0);
+    opacity: 1;
+} */
+
+/* じんわり表示 */
+/* .blur_img {
+    opacity: 0;
+    -moz-transition: -moz-transform 0.5s linear;
+    -webkit-transition: -webkit-transform 0.5s linear;
+    -o-transition: -o-transform 0.5s linear;
+    -ms-transition: -ms-transform 0.5s linear;
+    transition: transform 0.5s linear;
+    -webkit-animation-duration: 1.5s;
+    animation-duration: 1.5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+.img-blur {
+    -webkit-animation-name: imageBlur;
+    animation-name: imageBlur;
+    opacity: 1;
+    transition: .8s;
+}
+
+@-webkit-keyframes imageBlur {
+    from {
+        opacity: 0;
+        -webkit-filter: blur(15px);
+        -moz-filter: blur(15px);
+        -ms-filter: blur(15px);
+        -o-filter: blur(15px);
+        filter: blur(15px);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -ms-filter: blur(0px);
+        -o-filter: blur(0px);
+        filter: blur(0px);
+    }
+}
+
+@keyframes imageBlur {
+    from {
+        opacity: 0;
+        -webkit-filter: blur(15px);
+        -moz-filter: blur(15px);
+        -ms-filter: blur(15px);
+        -o-filter: blur(15px);
+        filter: blur(15px);
+    }
+
+    to {
+        opacity: 1;
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -ms-filter: blur(0px);
+        -o-filter: blur(0px);
+        filter: blur(0px);
+    }
+} */
+
+/* fadeUp */
+
+/* .fadeUp {
+    animation-name: fadeUpAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+@keyframes fadeUpAnime {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} */
+
+
+/* スクロールをしたら出現する要素にはじめに透過0を指定　*/
+
+/* .fadeUpTrigger {
+    opacity: 0;
+} */
+
+
+/* その場で */
+/* .fadeIn {
+    animation-name: fadeInAnime;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+    opacity: 0;
+}
+
+.fadeInTrigger {
+    opacity: 0;
+}
+
+@keyframes fadeInAnime {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+} */

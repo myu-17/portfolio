@@ -1,0 +1,448 @@
+@charset "utf-8";
+
+/* hmg */
+.nav-wrapper {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+/* profile */
+.profile {
+    position: relative;
+    margin: 18% 0 20%;
+    padding-bottom: 6%;
+    width: 100%;
+}
+
+.profile-background {
+    position: absolute;
+    background-color: rgb(234, 247, 248);
+    top: 30%;
+    left: 0%;
+    width: 100%;
+    height: 70%;
+    z-index: -1;
+}
+
+.profile-background::before {
+    content: "";
+    background: url(../image/wave_bg_top.svg) center center no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* -100%にすると場合によっては余白が生まれることもあるので-99で指定 */
+    transform: translateY(-99%);
+}
+
+.profile-background::after {
+    content: "";
+    background: url(../image/wave_bg_bottom.svg) center center no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(99%);
+}
+
+.profile .profile-img {
+    margin-bottom: 8%;
+}
+
+.about-profile-wrap {
+    position: relative;
+    width: 600px;
+}
+
+.about-profile-wrap .wave-line {
+    position: absolute;
+    top: 0;
+    z-index: -1;
+}
+
+.profile .icon {
+    margin-left: 50px;
+    gap: 15px;
+}
+
+.profile .icon a:first-child {
+    width: 20px;
+}
+
+.profile .icon a:last-child {
+    width: 40px;
+}
+
+.about-profile-box {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.profile-text p:nth-child(2) {
+    margin: 3% 0;
+}
+
+.about-profile h3 {
+    font-family: "Klee One", cursive;
+    font-weight: 400;
+    font-size: clamp(20px, calc(1.49vw + 8.539px), 30px);
+    color: #007b74;
+}
+
+.about-profile {
+    margin-bottom: 4%;
+}
+
+
+/* myjourney */
+/* .myjourney {
+    margin: 0 17% 12%;
+} */
+
+.myjourney h2 {
+    margin-left: 6%;
+}
+
+.myjourney .section-heading {
+    margin-bottom: 15%;
+}
+
+.myjourney .myjourney-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: clamp(80px, calc(7.452vw + 22.697px), 130px);
+    margin-left: clamp(180px, calc(21.759vw + 12.677px), 326px);
+    margin-right: clamp(70px, calc(14.009vw - 37.729px), 164px);
+}
+
+.myjourney .myjourney-wrap::before {
+    content: '';
+    position: absolute;
+    width: clamp(1px, calc(0.149vw - 0.146px), 2px);
+    height: calc(100% + 100px);
+    left: -7em;
+    top: -4em;
+    transform: translateX(-50%);
+    background-color: #007b74;
+    font-size: clamp(18px, calc(1.043vw + 9.978px), 25px);
+}
+
+/* .myjourney .top-skill-wrap01 {
+    margin-bottom: 10%;
+} */
+
+.myjourney .myjourney-description {
+    /* width: 35%; */
+    position: relative;
+}
+
+.myjourney .myjourney-description h3 {
+    position: absolute;
+    top: -2em;
+    left: -5em;
+    transform: translateY(-50%);
+    color: #007b74;
+    letter-spacing: 0.1em;
+    align-items: flex-start;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(18px, calc(1.043vw + 9.978px), 25px);
+}
+
+.myjourney .myjourney-description p {
+    line-height: 2.4;
+    margin-bottom: 3%;
+}
+
+.myjourney h3::after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    width: 1px;
+    height: 13vw;
+    transform: translateY(-20%) rotate(53deg);
+    background-color: #007b74;
+}
+
+.myjourney .tytle-slash {
+    position: absolute;
+    top: -0.7em;
+    left: -1.3em;
+    font-family: "Bodoni Moda", serif;
+    font-size: min(11vw, 155px);
+    transform: rotate(32deg);
+}
+
+.myjourney .myjourney-description:after {
+    content: '';
+    width: 16px;
+    height: 16px;
+    background: #B7EADF;
+    position: absolute;
+    left: -7em;
+    top: -2em;
+    transform: translate(-50%, -50%);
+    border-radius: 100%;
+    font-size: clamp(18px, calc(1.043vw + 9.978px), 25px);
+}
+
+.myjourney .myjourney-description:nth-of-type(2) h3 {
+    left: -4em;
+}
+
+
+.myjourney .myjourney-description:nth-of-type(3) h3 {
+    left: -2em;
+}
+
+.myjourney .myjourney-textbox:last-of-type {
+    width: 100%;
+}
+
+
+
+/* likes */
+.likes {
+    position: relative;
+    margin: 25% 0 15%;
+    width: 100%;
+    height: clamp(740px, calc(49.18vw + 361.803px), 1070px);
+    padding: 5% 10%;
+    background-color: rgb(234, 247, 248);
+}
+
+
+
+.likes::before {
+    content: "";
+    background: url(../image/wave_bg_top.svg) center center no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* -100%にすると場合によっては余白が生まれることもあるので-99で指定 */
+    transform: translateY(-99%);
+}
+
+.likes::after {
+    content: "";
+    background: url(../image/wave_bg_bottom.svg) center center no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(99%);
+}
+
+
+
+
+
+
+
+.likes h2 {
+    margin: 0 0 7% 5%;
+}
+
+.likes ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 11%;
+}
+
+.likes ul li {
+    position: relative;
+    overflow: hidden;
+    width: 30%;
+    max-width: 300px;
+    margin-bottom: 10%;
+}
+
+.list-thumb img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    transition: filter 0.5s;
+}
+
+.list-desc {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.5s;
+    text-align: center;
+    padding: 1em;
+    pointer-events: none;
+}
+
+.list-desc>div p:first-of-type {
+    font-size: 18px;
+    margin-bottom: 0.5em;
+}
+
+.list-desc p {
+    color: #fafafa;
+}
+
+.list:hover .list-thumb img {
+    filter: brightness(40%);
+}
+
+
+.list:hover .list-desc {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ====================
+   responsive
+==================== */
+@media screen and (min-width: 1441px) {
+    .likes {
+        padding: 5% 20%;
+    }
+}
+
+
+
+@media screen and (max-width: 768px) {
+    .secTitleEn {
+        font-size: clamp(32px, calc(7.125vw + 5.282px), 60px);
+    }
+
+    .secTitleJp {
+        font-size: clamp(14px, calc(0.596vw + 9.416px), 18px);
+    }
+
+
+    /* profile */
+    .about-profile-wrap {
+        width: clamp(300px, calc(50.891vw + 109.16px), 500px);
+    }
+
+    /* my journey */
+    .myjourney .myjourney-description {
+        width: 100%;
+        align-items: flex-start;
+    }
+
+    .myjourney .myjourney-wrap {
+        gap: clamp(35px, calc(11.45vw - 7.939px), 80px);
+        margin: 0 12%;
+    }
+
+    .myjourney .myjourney-description:after {
+        width: 16px;
+        height: 16px;
+        left: clamp(-20px, calc(-4.071vw - 4.733px), -36px);
+        top: 14.4px;
+    }
+
+    .myjourney .myjourney-description h3 {
+        position: static;
+        transform: none;
+        font-size: clamp(18px, calc(1.043vw + 9.978px), 25px);
+        margin-bottom: 4%;
+    }
+
+    .myjourney h3::after {
+        position: static;
+        transform: none;
+    }
+
+    .myjourney .myjourney-wrap::before {
+        left: -1.1em;
+    }
+
+
+
+
+
+
+
+    /* likes */
+    .likes {
+        padding: 5% 5%;
+        height: clamp(435px, calc(77.608vw + 143.969px), 740px);
+    }
+
+    .likes h2 {
+        margin: 0 0 7% 0%;
+    }
+
+    .likes ul {
+        margin: 0;
+        gap: 10%;
+    }
+
+    .likes ul li {
+        margin-bottom: 8%;
+        width: 35%;
+        min-width: 140px;
+    }
+
+    .list-desc>div p:first-of-type {
+        font-size: clamp(15px, calc(0.763vw + 12.137px), 18px);
+        margin-bottom: 0.5em;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .likes {
+        height: clamp(1300px, calc(44.444vw + 1133.333px), 1400px);
+    }
+
+    .likes ul li {
+        margin-bottom: 8%;
+        width: 270px;
+    }
+}

@@ -1,0 +1,526 @@
+@charset "utf-8";
+
+/* hmg */
+.nav-wrapper {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.works-description {
+    margin: 5% 0;
+}
+
+h2 {
+    font-family: "Klee One", cursive;
+    font-weight: 400;
+    font-size: clamp(27px, calc(2.235vw + 9.809px), 42px);
+    margin-left: 0;
+}
+
+.mockup-wrap {
+    text-align: center;
+    margin: 0 5%;
+}
+
+
+/* overview-area01 */
+.overview-area01 {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+}
+
+.tytle-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: #007b74;
+}
+
+.genre {
+    font-family: optima-nova-lt-pro, sans-serif;
+    font-size: clamp(18px, calc(1.043vw + 9.978px), 25px);
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    align-self: flex-start;
+}
+
+.tytle {
+    align-self: flex-start;
+}
+
+.link-wrap {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.url {
+    margin: 10px 10px 0 0;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: clamp(13px, calc(0.447vw + 9.562px), 16px);
+}
+
+.url img {
+    width: 10px;
+    margin-left: 0.3em;
+}
+
+.mockup-wrap dl {
+    width: 48%;
+    max-width: 478px;
+    border: solid 0.5px #007b74;
+    border-radius: 8px;
+    padding: 1.8% 1.5%;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.mockup-wrap dt {
+    color: #007b74;
+    font-size: clamp(13px, calc(0.447vw + 9.562px), 16px);
+    font-weight: 700;
+    margin-right: 8%;
+}
+
+.mockup-wrap dl .production-time dd {
+    align-items: flex-end;
+    margin-bottom: 15px;
+}
+
+.mockup-wrap dl .production-time dd span:last-child {
+    margin-top: 15px;
+}
+
+.mockup-wrap dl .tool dt {
+    margin-right: 15%;
+}
+
+.mockup-wrap dl .flex {
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.mockup-wrap dd {
+    font-size: clamp(10px, calc(0.745vw + 4.27px), 15px);
+}
+
+/* pc-komorebi-mockup */
+.pc-mockup {
+    margin: 3% 0 7%;
+}
+
+/* overview-area02 */
+.overview-area02 {
+    justify-content: space-between;
+    align-items: flex-start;
+    position: relative;
+}
+
+.overview-area02 .wave-line {
+    position: absolute;
+    z-index: -1;
+    top: 30%;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+.sp-mockup {
+    aspect-ratio: 615 / 460;
+    width: 47.5%;
+    max-width: 615px;
+    overflow: hidden;
+    border-radius: 2.24%;
+}
+
+.overview-area02 .overview-text {
+    width: 43%;
+    text-align: left;
+    padding-top: 8%;
+}
+
+.overview-area02 .overview-text p {
+    font-size: clamp(13px, calc(0.447vw + 9.562px), 16px);
+}
+
+/* skew-area */
+.skew-area {
+    margin: 10% 0;
+    aspect-ratio: 1300 / 760;
+    overflow: hidden;
+    border-radius: 1.538%;
+}
+
+/* works-description02 */
+.works-description02 {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin: 27% auto;
+    background-color: rgb(234, 247, 248);
+}
+
+.works-description02::before {
+    content: "";
+    background: url(../image/wave_bg_top.svg) center center no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* -100%にすると場合によっては余白が生まれることもあるので-99で指定 */
+    transform: translateY(-99%);
+}
+
+.works-description02::after {
+    content: "";
+    background: url(../image/wave_bg_bottom.svg) center center no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(99%);
+}
+
+
+
+
+.works-description02 dl {
+    width: 100%;
+    max-width: 960px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.works-description02 dl>div {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    text-align: left;
+    /* 念のため追加、全部左揃え */
+}
+
+.works-description02 dl dt,
+.works-description02 dl dd {
+    text-align: left;
+}
+
+.works-description02 dl dt {
+    width: clamp(154px, calc(12.072vw + 61.17px), 235px);
+    color: #007b74;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 1em;
+}
+
+.works-description02 dl dd {
+    width: clamp(576px, calc(19.374vw + 427.013px), 706px);
+    line-height: 2;
+}
+
+
+
+/* capture */
+.capture-area {
+    margin: 15% 12% 30%;
+}
+
+.capture-area .capture-wrap {
+    align-items: flex-start;
+    gap: 8%;
+}
+
+.capture-area img {
+    box-shadow: 0px 0px 25px rgba(146, 147, 147, 0.2);
+}
+
+.capture-wrap {
+    display: flex;
+    gap: 40px;
+    /* お好みで間隔調整 */
+    justify-content: center;
+}
+
+.scroll-box-pc {
+    width: 580px;
+    height: 780px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 0px 0px 25px rgba(146, 147, 147, 0.2);
+}
+
+.scroll-box-sp {
+    width: 330px;
+    height: 780px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    box-shadow: 0px 0px 25px rgba(146, 147, 147, 0.2);
+}
+
+.scroll-box-pc img,
+.scroll-box-sp img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+
+
+/* top-works-all */
+.top-works-all {
+    margin: 0 16%;
+}
+
+.top-works-all h2 {
+    font-family: "Aboreto", system-ui;
+    font-weight: 400;
+    margin-left: 0;
+}
+
+.top-works-all .section-heading-wrap {
+    justify-content: space-between;
+    align-items: normal;
+    margin-bottom: 5%;
+}
+
+.top-works-all ul li img {
+    margin-bottom: 12px;
+}
+
+.top-works-all h3 {
+    font-family: "Klee One", cursive;
+    font-weight: 400;
+    font-size: clamp(14px, calc(0.894vw + 7.124px), 20px);
+    margin: 5px 0;
+}
+
+.top-works-all ul {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 6%;
+}
+
+.top-works-all ul li {
+    width: 46%;
+    height: auto;
+    margin-bottom: 8%;
+}
+
+.top-works-all ul li:nth-child(6),
+.top-works-all ul li:nth-child(7),
+.top-works-all ul li:nth-child(8) {
+    width: 40.9%;
+}
+
+.top-works-all ul li:nth-child(6),
+.top-works-all ul li:nth-child(8) {
+    margin-right: 5%;
+}
+
+.top-works-all ul li span {
+    font-size: clamp(12px, calc(0.596vw + 7.416px), 16px);
+    color: #5a5b5b;
+}
+
+.top-works-all h3 .tytle-En {
+    font-family: "optima-nova-lt-pro", sans-serif;
+    font-weight: 400;
+    color: #007b74;
+    font-size: clamp(14px, calc(0.894vw + 7.124px), 20px);
+    margin: 5px 0;
+}
+
+
+.all-works {
+    position: relative;
+    background-color: rgb(234, 247, 248);
+    padding-top: 5%;
+}
+
+.all-works::before {
+    content: "";
+    background: url(../image/wave_bg_top.svg) center center no-repeat;
+    background-size: 100% auto;
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* -100%にすると場合によっては余白が生まれることもあるので-99で指定 */
+    transform: translateY(-99%);
+}
+
+.all-works::after {
+    content: "";
+    background-color: rgb(234, 247, 248);
+    width: 100%;
+    height: calc(100vw / 9);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    transform: translateY(99%);
+}
+
+
+
+/* ====================
+   responsive
+==================== */
+@media screen and (min-width: 769px) {
+    .sp-overview-area {
+        display: none;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+    .pc-overview-area {
+        display: none;
+    }
+
+    .works-description {
+        margin: 8% 0;
+    }
+
+    h2 {
+        font-size: clamp(20px, calc(3.817vw + 5.687px), 35px);
+    }
+
+    .genre,
+    .url {
+        margin: 4px 0 0 0;
+        font-size: clamp(14px, calc(1.527vw + 8.275px), 20px);
+    }
+
+    .sp-overview-area .overview-text {
+        margin-bottom: 7%;
+        text-align: left;
+    }
+
+    .sp-overview-area .overview-text p {
+        font-size: clamp(13px, calc(1.272vw + 8.229px), 18px);
+    }
+
+    .overview-area02 {
+        flex-direction: column;
+    }
+
+    .skew-area {
+        margin: 0;
+    }
+
+    .mockup-wrap dl {
+        width: clamp(335px, calc(62.341vw + 101.221px), 580px);
+        max-width: none;
+        padding: clamp(7px, calc(3.308vw - 5.405px), 20px) clamp(5px, calc(5.089vw - 14.084px), 25px);
+    }
+
+    .mockup-wrap dt {
+        color: #007b74;
+        font-size: clamp(12px, calc(2.036vw + 4.366px), 20px);
+    }
+
+
+    .mockup-wrap dd {
+        font-size: clamp(11px, calc(1.781vw + 4.321px), 18px);
+    }
+
+    .overview-area02 .sp-mockup {
+        width: 55vw;
+        min-width: 240px;
+        margin: 7% 0;
+    }
+
+    /* works-description02 */
+    .works-description02 dl>div {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .works-description02 dl {
+        padding: 7% 5%;
+        gap: clamp(30px, calc(3.817vw + 15.687px), 45px);
+    }
+
+    .works-description02 dl dt {
+        margin-bottom: 5px;
+        font-size: clamp(14px, calc(1.527vw + 8.275px), 20px);
+    }
+
+    .works-description02 dl dd {
+        margin-left: 1em;
+        width: 94%;
+        font-size: clamp(13px, calc(1.272vw + 8.229px), 18px);
+    }
+
+    /* capture-area */
+    .section-heading-wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .capture-area .capture-wrap {
+        align-items: flex-start;
+        gap: 85px;
+        flex-direction: column;
+    }
+
+
+    .scroll-box-pc {
+        width: clamp(285px, calc(75.064vw + 3.511px), 580px);
+    }
+
+    .scroll-box-sp {
+        width: clamp(285px, calc(11.45vw + 242.061px), 330px);
+    }
+
+    /* top-works-all */
+    .section-heading .flex02 {
+        margin-bottom: 5%;
+    }
+
+    .secTitleEn {
+        font-size: clamp(32px, calc(7.125vw + 5.282px), 60px);
+    }
+
+    .secTitleJp {
+        font-size: clamp(11px, calc(1.781vw + 4.321px), 18px);
+    }
+
+    .top-works-all {
+        margin: 0 5%;
+    }
+
+    .top-works-all img {
+        margin-bottom: clamp(0px, calc(1.527vw - 5.725px), 6px);
+    }
+
+    .top-works-all ul li span {
+        font-size: clamp(9.5px, calc(0.636vw + 7.115px), 12px);
+    }
+
+    .top-works-all h3,
+    .top-works-all h3 .tytle-En {
+        font-size: clamp(11px, calc(1.018vw + 7.183px), 15px);
+        margin-bottom: 0;
+    }
+
+
+}
