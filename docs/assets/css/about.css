@@ -369,6 +369,10 @@
         width: clamp(300px, calc(50.891vw + 109.16px), 500px);
     }
 
+    .about-profile-wrap .wave-line {
+        display: none;
+    }
+
     /* my journey */
     .myjourney .myjourney-description {
         width: 100%;
