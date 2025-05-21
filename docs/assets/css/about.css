@@ -377,7 +377,7 @@
 
     .myjourney .myjourney-wrap {
         gap: clamp(35px, calc(11.45vw - 7.939px), 80px);
-        margin: 0 12%;
+        margin: 0 10% 0 12%;
     }
 
     .myjourney .myjourney-description:after {

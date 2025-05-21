@@ -7,6 +7,9 @@ html {
     scroll-behavior: smooth;
 }
 
+
+
+
 /* タグ */
 
 body {
@@ -50,9 +53,16 @@ a {
     color: #007b74;
 }
 
-.tytle ruby {
+/* .tytle ruby {
     ruby-align: center;
     ruby-position: over;
+} */
+
+.tytle ruby {
+    display: inline-flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    line-height: 1;
 }
 
 .tytle rt {
@@ -273,9 +283,9 @@ hamburger(ハンバーガーアイコン)
 }
 
 /* 
-  sp-nav(ナビ)
+  hmg-menu
   =================================== */
-.sp-nav {
+.hmg-menu {
     position: fixed;
     right: -100%;
     /*ハンバーガーがクリックされる前はWindow右側に隠す*/
@@ -294,38 +304,43 @@ hamburger(ハンバーガーアイコン)
 
 }
 
-.sp-nav ul {
+.hmg-menu ul {
     align-items: flex-end;
-    gap: 28px;
+    gap: 30px;
     padding-left: 40%;
 }
 
-.sp-nav ul li {
+.hmg-menu ul li {
     align-items: flex-end;
 }
 
+.hmg-menu ul li a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
 
-.sp-nav ul li a {
+.hmg-menu ul li a .nav-en {
     font-size: 20px;
     font-family: "Aboreto", system-ui;
     font-weight: 400;
     font-style: normal;
     color: #007b74;
     letter-spacing: 0.1em;
-
 }
 
-.sp-nav ul li span {
+.hmg-menu ul li .nav-jp {
     font-size: 11px;
     font-family: "Zen Kaku Gothic New", sans-serif;
     font-weight: 400;
     font-style: normal;
     color: #007b74;
-    letter-spacing: 0.05em;
+    letter-spacing: 0em;
 }
 
 /*ハンバーガーがクリックされたら右からスライド*/
-.open .sp-nav {
+.open .hmg-menu {
     right: 0;
 }
 
@@ -359,9 +374,7 @@ hamburger(ハンバーガーアイコン)
 .nav-wrapper {
     opacity: 0;
     transition: opacity 0.5s ease;
-    /* ふわっと出る */
     pointer-events: none;
-    /* 最初はクリックもできないように */
 }
 
 .nav-wrapper.is-show {
@@ -427,6 +440,14 @@ footer .contact-tytle {
     font-family: "Aboreto", system-ui;
     font-weight: 400;
     font-style: normal;
+}
+
+footer .mail-address a {
+    transition: 0.3s;
+}
+
+footer .mail-address a:hover {
+    opacity: 0.6;
 }
 
 
@@ -560,25 +581,25 @@ footer .contact-tytle {
 
     /* header */
     /* hmg */
-    .sp-nav {
+    .hmg-menu {
         width: 100%;
         height: 100vh;
         border-radius: 0;
     }
 
-    .sp-nav ul {
-        gap: clamp(10px, calc(4.58vw - 7.176px), 28px);
+    .hmg-menu ul {
+        gap: clamp(40px, calc(5.089vw + 20.916px), 60px);
     }
 
-    .sp-nav ul li a {
+    .hmg-menu ul li a .nav-en {
         font-size: clamp(25px, calc(3.817vw + 10.687px), 40px);
     }
 
-    .sp-nav ul li span {
+    .hmg-menu ul li a .nav-jp {
         font-size: clamp(10px, calc(1.272vw + 5.229px), 15px);
     }
 
-    .sp-nav ul li {
+    .hmg-menu ul li {
         gap: 5px;
     }
 
@@ -586,6 +607,8 @@ footer .contact-tytle {
     .open .hamburger__line--3 {
         width: clamp(40px, calc(6.361vw + 16.145px), 65px);
     }
+
+
 
 
 

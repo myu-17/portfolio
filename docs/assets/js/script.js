@@ -26,7 +26,7 @@ window.onload = function () {
   var hamburger = document.getElementById("js-hamburger");
   var blackBg = document.getElementById("js-black-bg");
   var topWorks = document.querySelector(".top-works");
-  var navLinks = document.querySelectorAll(".sp-nav a");
+  var navLinks = document.querySelectorAll(".hmg-menu a");
 
   // ハンバーガークリック
   hamburger.addEventListener("click", function () {
@@ -37,6 +37,17 @@ window.onload = function () {
   blackBg.addEventListener("click", function () {
     nav.classList.remove("open");
   });
+
+  // ページのどこをクリックしても閉じる
+  $(document).click(function (e) {
+    var target = e.target;
+    if ($(target).attr("id") !== "js-hamburger") {
+      $(".hmg-menu").removeClass("open");
+      $("#nav-wrapper").removeClass("open");
+      $("#js-hamburger").removeClass("active");
+    }
+  });
+  $("#js-hamburger").click(function () {});
 
   // スクロールでナビ表示
   window.addEventListener("scroll", function () {

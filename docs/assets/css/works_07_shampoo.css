@@ -17,6 +17,11 @@ h2 {
     margin-left: 0;
 }
 
+.works-description h2 span {
+    font-size: 25px;
+    margin-left: 0.2em;
+}
+
 .mockup-wrap {
     text-align: center;
     margin: 0 5%;
@@ -382,8 +387,13 @@ h2 {
         margin: 8% 0;
     }
 
-    h2 {
-        font-size: clamp(20px, calc(3.817vw + 5.687px), 35px);
+    .works-description h2 {
+        font-size: 35px;
+    }
+
+    .works-description h2 span {
+        font-size: clamp(14px, calc(2.036vw + 6.366px), 22px);
+        margin-left: 0.2em;
     }
 
     .genre,
@@ -410,9 +420,9 @@ h2 {
     }
 
     .mockup-wrap dl {
-        width: clamp(250px, calc(47.074vw + 73.473px), 435px);
+        width: clamp(335px, calc(62.341vw + 101.221px), 580px);
         max-width: none;
-        padding: clamp(7px, calc(3.308vw - 5.405px), 20px) clamp(5px, calc(5.089vw - 14.084px), 25px);
+        padding: 4% 0% 4% 4%;
     }
 
     .mockup-wrap dt {
@@ -492,7 +502,7 @@ h2 {
         margin: 0 5%;
     }
 
-    .top-works-all img {
+    .top-works-all ul li img {
         margin-bottom: clamp(0px, calc(1.527vw - 5.725px), 6px);
     }
 
@@ -503,7 +513,7 @@ h2 {
     .top-works-all h3,
     .top-works-all h3 .tytle-En {
         font-size: clamp(11px, calc(1.018vw + 7.183px), 15px);
-        margin-bottom: 0;
+        margin: 0;
     }
 
     .pc-mockup {

@@ -165,7 +165,7 @@ h1 {
 
 
 
-nav ul li:nth-child(2) {
+#navArea nav ul li:nth-child(2) {
    margin: 25% 0;
 }
 
@@ -226,7 +226,7 @@ nav ul li:nth-child(2) {
    font-family: "Bodoni Moda", serif;
    font-size: min(11vw, 155px);
    transform: rotate(32deg);
-   font-weight: 300;
+   font-weight: bold;
    color: #007b74;
 }
 
@@ -715,6 +715,14 @@ a:hover::before {
       font-size: clamp(11px, calc(1.272vw + 6.229px), 16px);
    }
 
+   .more-btn a::before {
+      height: 0.5px;
+   }
+
+   .more-btn a::after {
+      height: 0.5px;
+   }
+
    /* header */
    h1 {
       font-size: clamp(47px, calc(11.959vw + 2.153px), 94px);
@@ -753,6 +761,10 @@ a:hover::before {
 
 
    /* works (selected)*/
+   .top-works .top-works-selected h2 {
+      margin-left: 6%;
+   }
+
    .secTitleEn {
       font-size: clamp(32px, calc(7.125vw + 5.282px), 60px);
    }
@@ -831,7 +843,7 @@ a:hover::before {
    }
 
    .more-btn {
-      width: 14.5vw;
+      width: clamp(85px, calc(6.361vw + 61.145px), 110px);
    }
 
 
@@ -841,7 +853,7 @@ a:hover::before {
       margin: 10% 5% 0;
    }
 
-   .top-works-all img {
+   .top-works-all ul li img {
       margin-bottom: clamp(0px, calc(1.527vw - 5.725px), 6px);
    }
 
@@ -852,15 +864,16 @@ a:hover::before {
    .top-works-all h3,
    .top-works-all h3 .tytle-En {
       font-size: clamp(11px, calc(1.018vw + 7.183px), 15px);
-      margin-bottom: 0;
+      margin: 0;
    }
 
    .top-works-all .notice {
       width: 55%;
+      padding: 8px 10px 10px;
    }
 
    .top-works-all .notice p {
-      line-height: 1.5;
+      line-height: 1.8;
    }
 
    .all-btn a {
@@ -888,7 +901,8 @@ a:hover::before {
    }
 
    .top-about .more-btn {
-      margin-left: clamp(120px, calc(42.748vw - 40.305px), 288px);
+      margin-left: auto;
+      margin-right: clamp(60px, calc(20.356vw - 16.336px), 140px);
    }
 
    /* skill */
