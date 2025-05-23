@@ -138,24 +138,33 @@ $(".toggle_btn").on("click", function () {
 /* ====================
    h2文字アニメーション
 ==================== */
+// 指定したセレクタの子要素を1文字づつspanタグで囲む
+
 document.addEventListener("DOMContentLoaded", () => {
   const targets = document.querySelectorAll(".anime-up");
+  // .anime-up クラスがついてる要素を全て取得。
 
   targets.forEach((target) => {
     const text = target.textContent.trim();
     target.textContent = "";
+    // 要素の中身（テキスト）を取得して、空にする。
 
     for (let i = 0; i < text.length; i++) {
       const char = text[i] === " " ? "\u00A0" : text[i];
+      // スペース（半角空白）は &nbsp;（\u00A0）に変換。空白が消えないようにする。
+
       const outerSpan = document.createElement("span");
       const innerSpan = document.createElement("span");
       innerSpan.textContent = char;
-      innerSpan.style.animationDelay = `${i * 0.07}s`; // ←ここ変更！
+      innerSpan.style.animationDelay = `${i * 0.07}s`;
       outerSpan.appendChild(innerSpan);
       target.appendChild(outerSpan);
+      // 1文字ずつ、内側の <span> に文字とアニメーション遅延を設定。
+      // それを外側の </span> に包んで、ターゲット要素に追加。
     }
   });
 
+  // アニメーションの指定
   const observer = new IntersectionObserver((entries, obs) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
@@ -257,3 +266,85 @@ document.addEventListener("DOMContentLoaded", function () {
     const parallax_instance = new simpleParallax(target, parallaxConfig);
   }
 });
+
+/* ====================
+GSAP
+==================== */
+
+// fv-text全体の指定
+// gsap.to(".fv-text", {
+//   opacity: 1,
+//   delay: 0.5,
+//   stagger: 1,
+//   ease: "power2.out",
+// });
+
+const paragraphs = document.querySelectorAll(".fv-text01, .fv-text04");
+
+paragraphs.forEach((paragraph) => {
+  const textContent = paragraph.textContent;
+  const newTextContent = [...textContent]
+    .map((char) => `<span>${char}</span>`)
+    .join("");
+  paragraph.innerHTML = newTextContent;
+});
+
+const jsLoaderBg = ".js-loader-bg";
+const jsNav = ".js-nav";
+const jsScrollDown = ".js-scroll-down";
+
+const tl = gsap.timeline();
+// timelineを作成
+
+tl.to(jsLoaderBg, {
+  y: "100%",
+  delay: 0.8,
+})
+  .fromTo(
+    ".fv-text01 span",
+    /* 前のアニメーションが完了する0.5秒後に実行 */
+    {
+      autoAlpha: 0,
+      y: 30,
+    },
+    {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.04,
+    },
+    "+=0.4"
+  )
+  .fromTo(
+    ".fv-text04 span",
+    /* 前のアニメーションが完了する0.1秒前に実行 */
+    {
+      autoAlpha: 0,
+      y: 30,
+    },
+    {
+      autoAlpha: 1,
+      y: 0,
+      stagger: 0.04,
+    },
+    "-=0.1"
+  )
+  .to(
+    /* リード文 */
+    jsNav,
+    {
+      /* 前のアニメーションが完了する0.1秒後に実行 */
+      opacity: 1,
+      y: 0,
+    },
+    "+=0.1"
+  )
+  .to(
+    /* ヘッダー */
+    /* 前のアニメーションと同時 */
+    jsScrollDown,
+    {
+      opacity: 1,
+      y: 0,
+    },
+    "<"
+  );

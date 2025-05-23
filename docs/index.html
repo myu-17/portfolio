@@ -23,24 +23,25 @@
   <link rel="stylesheet" href="assets/css/common.css">
   <link rel="stylesheet" href="assets/css/top.css">
   <link rel="stylesheet" href="https://use.typekit.net/dbm0wiu.css">
-
   <script src="https://code.jquery.com/jquery-3.7.1.min.js"
     integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.6.1/dist/simpleParallax.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
   <script src="assets/js/script.js" defer></script>
 </head>
 
 <body>
+  <div class="c-loader-bg js-loader-bg"></div>
   <header>
     <div class="header-wrap">
       <div class="inner-header">
         <div class="fv-text-wrap">
-          <span class="fv-text01">WELCOME TO</span>
           <h1>
-            <span>MYU</span>
-            <span>HIRAYAMA</span>
+            <span class="fv-text fv-text01">WELCOME　TO</span>
+            <span class="fv-text fv-text02">MYU</span>
+            <span class="fv-text fv-text03">HIRAYAMA</span>
+            <span class="fv-text fv-text04">PORTFOLIO　SITE</span>
           </h1>
-          <span class="fv-text02">PORTFOLIO SITE</span>
         </div>
       </div>
       <div id="nav-wrapper" class="nav-wrapper">
@@ -71,7 +72,7 @@
         <div class="black-bg" id="js-black-bg"></div>
       </div>
       <div id="navArea">
-        <nav>
+        <nav class="js-nav">
           <ul class="flex02">
             <li><a href="#works">WORKS</a></li>
             <li><a href="./subPage_About/">ABOUT</a></li>
@@ -79,7 +80,7 @@
           </ul>
         </nav>
       </div>
-      <div class="scroll-down-01">
+      <div class="scroll-down-01 js-scroll-down">
         <div class="circle-text-01"></div>
         <div class="arrow-01"></div>
       </div>
