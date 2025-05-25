@@ -305,8 +305,8 @@ tl.to(jsLoaderBg, {
       autoAlpha: 1,
       y: 0,
       stagger: 0.01,
-    }
-    // "+=0.4"
+    },
+    "-=0.4"
   )
   .fromTo(
     ".fv-text02 span",
@@ -319,7 +319,7 @@ tl.to(jsLoaderBg, {
       duration: 1 /*アニメーションの時間*/,
       ease: Power2.easeInOut,
     },
-    "-=0.2"
+    "-=0.4"
   )
   .fromTo(
     ".fv-text03 span",
@@ -356,7 +356,7 @@ tl.to(jsLoaderBg, {
       opacity: 1,
       y: 0,
     }
-    // "+=0.2"
+    // "+=0.1"
   )
   .to(
     /* ヘッダー */
