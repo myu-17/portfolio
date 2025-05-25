@@ -65,6 +65,7 @@ h2 {
 }
 
 .link-wrap a:hover {
+    letter-spacing: 0.05em;
     opacity: 0.6;
 }
 

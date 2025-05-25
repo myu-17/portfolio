@@ -202,7 +202,7 @@ h3 {
     font-size: clamp(16px, calc(1.341vw + 5.686px), 25px);
     font-weight: 300;
     font-style: normal;
-    letter-spacing: 0.03em;
+    letter-spacing: 0.06em;
     border-radius: 999px;
     display: flex;
     box-sizing: border-box;
@@ -217,7 +217,12 @@ h3 {
     transition: all 0.3s;
 }
 
-.all-btn a::before {
+.all-btn a:hover {
+    letter-spacing: 0em;
+}
+
+
+/* .all-btn a::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -225,7 +230,7 @@ h3 {
     border-radius: 999px;
     opacity: 0.3;
     z-index: 0;
-}
+} */
 
 
 
@@ -395,6 +400,7 @@ hamburger(ハンバーガーアイコン)
 }
 
 
+
 /* ====================
    footer
 ==================== */
@@ -404,7 +410,7 @@ footer {
     background-image: linear-gradient(330deg, rgb(183, 248, 219, 0.8) 0%, rgb(80, 167, 194, 0.8) 100%);
     color: #007b74;
     overflow: hidden;
-    background: url(../image/footer_bg02.svg)center center no-repeat;
+    background: url(../image/footer_bg.svg)center center no-repeat;
     background-size: cover;
     width: 100%;
     height: auto;
@@ -420,6 +426,10 @@ footer .mail-address {
     font-weight: 100;
     font-style: normal;
     letter-spacing: 0.12em;
+}
+
+footer .mail-address a:hover {
+    letter-spacing: 0.05em;
 }
 
 footer .footer-arrow {

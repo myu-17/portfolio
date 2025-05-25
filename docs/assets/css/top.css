@@ -108,14 +108,14 @@ header {
    background-image: linear-gradient(-225deg, rgb(183, 248, 219, 0.7) 0%, rgb(80, 167, 194, 0.8) 100%)
 }
 
-.header-wrap::before {
+/* .header-wrap::before {
    content: "";
    position: absolute;
    inset: 0;
    background-image: url(https://grainy-gradients.vercel.app/noise.svg);
    opacity: 0.4;
    z-index: 0;
-}
+} */
 
 
 /* .inner-header {
@@ -203,16 +203,18 @@ header {
    margin: 25% 0;
 }
 
+#navArea nav>ul li a {
+   display: inline-block;
+   width: clamp(85px, calc(2.235vw + 67.809px), 100px);
+   text-align: left;
+   font-size: clamp(17px, calc(0.447vw + 13.562px), 20px);
+   letter-spacing: 0.05em;
+   transition: letter-spacing 0.3s;
+}
 
-/* ====================
-   ハンバーガーメニュー
-==================== */
-
-
-
-/* ====================
-   メニュー内コンテンツ
-==================== */
+#navArea nav>ul li a:hover {
+   letter-spacing: 0.15em;
+}
 
 
 
@@ -220,11 +222,6 @@ header {
 /* ====================
    works
 ==================== */
-
-
-
-
-
 
 /* work説明 */
 .tytle-box {
@@ -758,6 +755,16 @@ a:hover::before {
    }
 
    /* header */
+   #navArea nav>ul li a {
+      width: auto;
+      font-size: clamp(14px, calc(0.763vw + 11.137px), 17px);
+   }
+
+   #navArea nav>ul li a:hover {
+      letter-spacing: 0.05em;
+      /* 通常と同じ値に戻す */
+   }
+
    .fv-text02,
    .fv-text03 {
       font-size: clamp(47px, calc(11.959vw + 2.153px), 94px);
@@ -773,11 +780,12 @@ a:hover::before {
    }
 
    .fv-text-wrap .fv-text01 {
-      top: -12%;
+      top: -20%;
       left: -8%;
    }
 
    .fv-text-wrap .fv-text04 {
+      bottom: -20%;
       right: -9%;
    }
 

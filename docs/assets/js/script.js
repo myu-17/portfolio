@@ -271,15 +271,9 @@ document.addEventListener("DOMContentLoaded", function () {
 GSAP
 ==================== */
 
-// fv-text全体の指定
-// gsap.to(".fv-text", {
-//   opacity: 1,
-//   delay: 0.5,
-//   stagger: 1,
-//   ease: "power2.out",
-// });
-
-const paragraphs = document.querySelectorAll(".fv-text01, .fv-text04");
+const paragraphs = document.querySelectorAll(
+  ".fv-text01, .fv-text02,.fv-text03,.fv-text04"
+);
 
 paragraphs.forEach((paragraph) => {
   const textContent = paragraph.textContent;
@@ -305,28 +299,54 @@ tl.to(jsLoaderBg, {
     /* 前のアニメーションが完了する0.5秒後に実行 */
     {
       autoAlpha: 0,
-      y: 30,
+      y: 10,
     },
     {
       autoAlpha: 1,
       y: 0,
-      stagger: 0.04,
+      stagger: 0.01,
+    }
+    // "+=0.4"
+  )
+  .fromTo(
+    ".fv-text02 span",
+    {
+      autoAlpha: 0,
     },
-    "+=0.4"
+    {
+      autoAlpha: 1,
+      stagger: 0.02,
+      duration: 1 /*アニメーションの時間*/,
+      ease: Power2.easeInOut,
+    },
+    "-=0.2"
+  )
+  .fromTo(
+    ".fv-text03 span",
+    {
+      autoAlpha: 0,
+    },
+    {
+      autoAlpha: 1,
+      stagger: 0.02,
+      duration: 1,
+      ease: Power2.easeInOut,
+    },
+    "-=0.7"
   )
   .fromTo(
     ".fv-text04 span",
     /* 前のアニメーションが完了する0.1秒前に実行 */
     {
       autoAlpha: 0,
-      y: 30,
+      y: 10,
     },
     {
       autoAlpha: 1,
       y: 0,
-      stagger: 0.04,
+      stagger: 0.01,
     },
-    "-=0.1"
+    "-=0.4"
   )
   .to(
     /* リード文 */
@@ -335,8 +355,8 @@ tl.to(jsLoaderBg, {
       /* 前のアニメーションが完了する0.1秒後に実行 */
       opacity: 1,
       y: 0,
-    },
-    "+=0.1"
+    }
+    // "+=0.2"
   )
   .to(
     /* ヘッダー */
