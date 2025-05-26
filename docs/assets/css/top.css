@@ -35,7 +35,8 @@ header {
 
 /* オープニングアニメーション */
 .js-nav,
-.js-scroll-down {
+.js-scroll-down,
+.my-logo {
    opacity: 0;
 }
 

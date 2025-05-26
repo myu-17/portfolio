@@ -286,6 +286,7 @@ paragraphs.forEach((paragraph) => {
 const jsLoaderBg = ".js-loader-bg";
 const jsNav = ".js-nav";
 const jsScrollDown = ".js-scroll-down";
+const mylogo = ".my-logo";
 
 const tl = gsap.timeline();
 // timelineを作成
@@ -349,7 +350,6 @@ tl.to(jsLoaderBg, {
     "-=0.4"
   )
   .to(
-    /* リード文 */
     jsNav,
     {
       /* 前のアニメーションが完了する0.1秒後に実行 */
@@ -359,7 +359,6 @@ tl.to(jsLoaderBg, {
     // "+=0.1"
   )
   .to(
-    /* ヘッダー */
     /* 前のアニメーションと同時 */
     jsScrollDown,
     {
@@ -367,4 +366,12 @@ tl.to(jsLoaderBg, {
       y: 0,
     },
     "<"
+    // )
+    // .to(
+    //   mylogo,
+    //   {
+    //     opacity: 1,
+    //     y: 0,
+    //   },
+    //   "<"
   );
