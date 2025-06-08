@@ -21,7 +21,7 @@ const observeSVG = () => {
   }
 };
 
-window.onload = function () {
+const Y = (window.onload = function () {
   var nav = document.getElementById("nav-wrapper");
   var hamburger = document.getElementById("js-hamburger");
   var blackBg = document.getElementById("js-black-bg");
@@ -91,7 +91,7 @@ window.onload = function () {
   });
 
   observeSVG();
-};
+});
 
 // scroll down
 document.addEventListener("DOMContentLoaded", () => {
